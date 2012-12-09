@@ -10,4 +10,5 @@ run="yeoman"
 pidFile="$logsDir/yeoman.pid"
 
 startStop $name $pidFile $1 $0
-yeoman server | tee $logsDir/yeoman.log
+yeoman server &
+echo $! > $pidFile
